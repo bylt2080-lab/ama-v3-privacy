@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Amazon Ads OAuth Callback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 880px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #222;
+    }
+    code {
+      display: block;
+      padding: 12px;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <h1>Amazon Ads OAuth Callback</h1>
+  <p>If authorization succeeds, your authorization code will appear below.</p>
+
+  <h2>Authorization Code</h2>
+  <code id="code">No code found.</code>
+
+  <h2>State</h2>
+  <code id="state">No state found.</code>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("code").textContent = params.get("code") || "No code found.";
+    document.getElementById("state").textContent = params.get("state") || "No state found.";
+  </script>
+</body>
+</html>
